@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Kamo Tinder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Kamo Tinder</h1>
+
+<section id="create">
+  <h2>Vytvoř profil</h2>
+  <input id="name" placeholder="Jméno">
+  <input id="bio" placeholder="O mně">
+  <button onclick="saveProfile()">Uložit profil</button>
+</section>
+
+<section id="app" style="display:none;">
+  <h2>Profily</h2>
+  <div id="card"></div>
+
+  <div class="buttons">
+    <button onclick="vote(false)">❌ Pass</button>
+    <button onclick="vote(true)">❤️ Like</button>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
