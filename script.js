@@ -1,36 +1,39 @@
+// PEVNĚ DANÉ PROFILY (edituj tady)
 const profiles = [
   {
     name: "Adam",
+    age: 19,
+    bio: "Student, sport, chill a dobrá hudba."
+  },
+  {
+    name: "Klára",
     age: 18,
-    bio: "klavirnik"
+    bio: "Kafe, focení, dlouhé procházky."
   },
   {
-    name: "Filip",
+    name: "Tomáš",
     age: 20,
-    bio: "Blulajt Erpé."
+    bio: "Gym, auta, podnikání."
   },
   {
-    name: "Tesla",
-    age: 15,
-    bio: "cybertruck"
-  },
-  {
-    name: "groot",
-    age: 16,
-    bio: "honim"
+    name: "Eliška",
+    age: 19,
+    bio: "Design, kreativita a chaos."
   }
 ];
 
+// VYKRESLENÍ PROFILŮ
 const container = document.getElementById("profiles");
 
-profiles.forEach(p => {
+profiles.forEach(profile => {
   const card = document.createElement("div");
   card.className = "card";
 
   card.innerHTML = `
-    <div class="avatar">${p.name[0]}</div>
-    <h2>${p.name}, ${p.age}</h2>
-    <p>${p.bio}</p>
+    <div class="avatar">${profile.name[0]}</div>
+    <h2>${profile.name}, ${profile.age}</h2>
+    <p>${profile.bio}</p>
+
     <div class="actions">
       <button class="pass">❌</button>
       <button class="like">❤️</button>
