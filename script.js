@@ -1,15 +1,15 @@
 const profiles = [
-  { name: "Filip", bio: "Spí, jí, zase spí." },
-  { name: "Adam", bio: "CEO vlastního chaosu." },
+  { name: "Filip", bio: "Erpí, jí, zase erpí." },
+  { name: "Adam", bio: "CEO vlastního klavíru." },
   { name: "Seba", bio: "Vše zvládnu. Zítra." },
-  { name: "Alex", bio: "Nejsem líný, jsem v úsporném režimu." },
+  { name: "Alex", bio: "Nejsem líná, jsem v úsporném režimu." },
   { name: "Maty", bio: "Když nejím, přemýšlím o jídle." },
   { name: "Tesla", bio: "Elektrizující osobnost." },
   { name: "Groot", bio: "I am Groot. To stačí." },
   { name: "Sofi", bio: "Spontánní plánovačka." },
   { name: "Velomit", bio: "Nevím kdo jsem, ale jedu dál." },
   { name: "Vojta", bio: "Fitness? Fit-ness." },
-  { name: "Aneta", bio: "Kafe je odpověď." }
+  { name: "Aneta", bio: "Spánek je odpověď." }
 ];
 
 let index = 0;
@@ -62,11 +62,9 @@ function vote(type) {
   }, 300);
 }
 
-// tlačítka
 document.getElementById("like").onclick = () => vote("like");
 document.getElementById("dislike").onclick = () => vote("dislike");
 
-// mazání databáze
 document.getElementById("clear").onclick = () => {
   localStorage.clear();
   location.reload();
@@ -75,10 +73,7 @@ document.getElementById("clear").onclick = () => {
 // swipe myší
 let startX = 0;
 
-card.addEventListener("mousedown", e => {
-  startX = e.clientX;
-});
-
+card.addEventListener("mousedown", e => startX = e.clientX);
 card.addEventListener("mouseup", e => {
   const diff = e.clientX - startX;
   if (diff > 100) vote("like");
