@@ -2,7 +2,7 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
-  <title>Krocinder</title>
+  <title>Tinder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -13,22 +13,24 @@
   <button id="clear">Vymazat historii</button>
 </header>
 
-<div class="app">
+<!-- HLAVNÍ KARTA -->
+<div id="card-wrapper">
   <div id="card"></div>
 
   <div class="buttons">
     <button id="dislike">❌</button>
     <button id="like">❤️</button>
   </div>
-
-  <aside id="history">
-    <h2>❤️ Like</h2>
-    <ul id="likes"></ul>
-
-    <h2>❌ Dislike</h2>
-    <ul id="dislikes"></ul>
-  </aside>
 </div>
+
+<!-- HISTORIE -->
+<aside id="history">
+  <h2>❤️ Like</h2>
+  <ul id="likes"></ul>
+
+  <h2>❌ Dislike</h2>
+  <ul id="dislikes"></ul>
+</aside>
 
 <script src="script.js"></script>
 </body>
