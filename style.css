@@ -77,4 +77,38 @@ main {
   pointer-events: auto;
 }
 
-#like { background: #2ec
+#like { background: #2ecc71; }
+#dislike { background: #e74c3c; }
+
+/* HISTORIE PANEL */
+#history {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100%;
+  background: #0b0e1c;
+  padding: 20px;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+}
+
+#history.open {
+  right: 0;
+}
+
+#history h2 {
+  margin-top: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+#history ul {
+  list-style: none;
+  padding: 0;
+}
+
+#history li {
+  padding: 6px 0;
+  opacity: 0.9;
+}
