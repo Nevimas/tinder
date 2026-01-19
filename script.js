@@ -1,23 +1,23 @@
 const profiles = [
   {
     name: "Adam",
-    age: 19,
-    bio: "Student, rád sport a chill."
-  },
-  {
-    name: "Klára",
     age: 18,
-    bio: "Kafe, focení, výlety."
+    bio: "klavirnik"
   },
   {
-    name: "Tomáš",
+    name: "Filip",
     age: 20,
-    bio: "Gym, auta, podnikání."
+    bio: "Blulajt Erpé."
   },
   {
-    name: "Eliška",
-    age: 19,
-    bio: "Hudba, design, kreativní chaos."
+    name: "Tesla",
+    age: 15,
+    bio: "cybertruck"
+  },
+  {
+    name: "groot",
+    age: 16,
+    bio: "honim"
   }
 ];
 
