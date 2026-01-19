@@ -10,31 +10,28 @@
 
 <header>
   <h1>Tinder</h1>
-  <button id="clear">Vymazat databázi</button>
+  <div class="top-buttons">
+    <button id="toggleHistory">Historie</button>
+    <button id="clear">Vymazat</button>
+  </div>
 </header>
 
-<div class="layout">
+<main>
+  <div id="card"></div>
 
-  <aside class="history like-box">
-    <h2>❤️ Like</h2>
-    <ul id="likes"></ul>
-  </aside>
+  <div class="buttons">
+    <button id="dislike">❌</button>
+    <button id="like">❤️</button>
+  </div>
+</main>
 
-  <main>
-    <div id="card"></div>
+<aside id="history">
+  <h2>❤️ Like</h2>
+  <ul id="likes"></ul>
 
-    <div class="buttons">
-      <button id="dislike">❌</button>
-      <button id="like">❤️</button>
-    </div>
-  </main>
-
-  <aside class="history dislike-box">
-    <h2>❌ Dislike</h2>
-    <ul id="dislikes"></ul>
-  </aside>
-
-</div>
+  <h2>❌ Dislike</h2>
+  <ul id="dislikes"></ul>
+</aside>
 
 <script src="script.js"></script>
 </body>
