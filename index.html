@@ -10,10 +10,30 @@
 
 <header class="top">
   <h1>Tinder</h1>
-  <span>Scrolluj profily 👇</span>
 </header>
 
-<main id="profiles"></main>
+<main>
+  <section id="swipe">
+    <div id="card"></div>
+
+    <div class="actions">
+      <button onclick="vote(false)">❌</button>
+      <button onclick="vote(true)">❤️</button>
+    </div>
+  </section>
+
+  <section class="lists">
+    <div>
+      <h2>❤️ Likes</h2>
+      <ul id="likes"></ul>
+    </div>
+
+    <div>
+      <h2>❌ Dislikes</h2>
+      <ul id="dislikes"></ul>
+    </div>
+  </section>
+</main>
 
 <script src="script.js"></script>
 </body>
