@@ -1,47 +1,41 @@
-let profiles = JSON.parse(localStorage.getItem("profiles")) || [];
-let seen = JSON.parse(localStorage.getItem("seen")) || [];
-let currentIndex = 0;
-
-function saveProfile() {
-  const name = document.getElementById("name").value;
-  const bio = document.getElementById("bio").value;
-
-  if (!name || !bio) {
-    alert("Vyplň všechno");
-    return;
+const profiles = [
+  {
+    name: "Adam",
+    age: 19,
+    bio: "Student, rád sport a chill."
+  },
+  {
+    name: "Klára",
+    age: 18,
+    bio: "Kafe, focení, výlety."
+  },
+  {
+    name: "Tomáš",
+    age: 20,
+    bio: "Gym, auta, podnikání."
+  },
+  {
+    name: "Eliška",
+    age: 19,
+    bio: "Hudba, design, kreativní chaos."
   }
+];
 
-  profiles.push({ name, bio });
-  localStorage.setItem("profiles", JSON.stringify(profiles));
+const container = document.getElementById("profiles");
 
-  document.getElementById("create").style.display = "none";
-  document.getElementById("app").style.display = "block";
+profiles.forEach(p => {
+  const card = document.createElement("div");
+  card.className = "card";
 
-  showProfile();
-}
-
-function showProfile() {
-  const card = document.getElementById("card");
-
-  while (currentIndex < profiles.length && seen.includes(currentIndex)) {
-    currentIndex++;
-  }
-
-  if (currentIndex >= profiles.length) {
-    card.innerHTML = "<p>Žádné další profily</p>";
-    return;
-  }
-
-  const p = profiles[currentIndex];
   card.innerHTML = `
-    <h3>${p.name}</h3>
+    <div class="avatar">${p.name[0]}</div>
+    <h2>${p.name}, ${p.age}</h2>
     <p>${p.bio}</p>
+    <div class="actions">
+      <button class="pass">❌</button>
+      <button class="like">❤️</button>
+    </div>
   `;
-}
 
-function vote(like) {
-  seen.push(currentIndex);
-  localStorage.setItem("seen", JSON.stringify(seen));
-  currentIndex++;
-  showProfile();
-}
+  container.appendChild(card);
+});
