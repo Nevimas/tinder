@@ -1,15 +1,15 @@
 const profiles = [
-  { name: "Filip", bio: "Erpí, jí, zase erpí." },
-  { name: "Adam", bio: "CEO vlastního klavíru." },
-  { name: "Seba", bio: "Vše zvládnu. Zítra." },
-  { name: "Alex", bio: "Nejsem líná, jsem v úsporném režimu." },
+  { name: "Filip", bio: "Umí spálit vodu a pořád se směje." },
+  { name: "Adam", bio: "Všechno ví, nic neřekne." },
+  { name: "Seba", bio: "Zítra začínám. Fakt." },
+  { name: "Alex", bio: "Mozek v beta verzi." },
   { name: "Maty", bio: "Když nejím, přemýšlím o jídle." },
-  { name: "Tesla", bio: "Elektrizující osobnost." },
-  { name: "Groot", bio: "I am Groot. To stačí." },
-  { name: "Sofi", bio: "Spontánní plánovačka." },
-  { name: "Velomit", bio: "Nevím kdo jsem, ale jedu dál." },
-  { name: "Vojta", bio: "Fitness? Fit-ness." },
-  { name: "Aneta", bio: "Spánek je odpověď." }
+  { name: "Tesla", bio: "Elektrizující vibe." },
+  { name: "Groot", bio: "I am Groot." },
+  { name: "Sofi", bio: "Chaos s úsměvem." },
+  { name: "Velomit", bio: "Legenda bez příběhu." },
+  { name: "Vojta", bio: "Fit… někdy." },
+  { name: "Aneta", bio: "Kafe > lidi." }
 ];
 
 let index = 0;
@@ -17,6 +17,7 @@ let index = 0;
 const card = document.getElementById("card");
 const likesEl = document.getElementById("likes");
 const dislikesEl = document.getElementById("dislikes");
+const historyPanel = document.getElementById("history");
 
 const likes = JSON.parse(localStorage.getItem("likes")) || [];
 const dislikes = JSON.parse(localStorage.getItem("dislikes")) || [];
@@ -28,7 +29,7 @@ function renderLists() {
 
 function renderCard() {
   if (!profiles[index]) {
-    card.innerHTML = "<h2>Hotovo 🔥</h2>";
+    card.innerHTML = "<h2>Žádné další profily</h2>";
     return;
   }
 
@@ -42,6 +43,8 @@ function renderCard() {
 }
 
 function vote(type) {
+  if (!profiles[index]) return;
+
   const name = profiles[index].name;
 
   if (type === "like") {
@@ -59,7 +62,7 @@ function vote(type) {
   setTimeout(() => {
     index++;
     renderCard();
-  }, 300);
+  }, 250);
 }
 
 document.getElementById("like").onclick = () => vote("like");
@@ -70,14 +73,18 @@ document.getElementById("clear").onclick = () => {
   location.reload();
 };
 
+document.getElementById("toggleHistory").onclick = () => {
+  historyPanel.classList.toggle("open");
+};
+
 // swipe myší
 let startX = 0;
 
 card.addEventListener("mousedown", e => startX = e.clientX);
 card.addEventListener("mouseup", e => {
   const diff = e.clientX - startX;
-  if (diff > 100) vote("like");
-  if (diff < -100) vote("dislike");
+  if (diff > 120) vote("like");
+  if (diff < -120) vote("dislike");
 });
 
 renderCard();
