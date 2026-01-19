@@ -8,27 +8,27 @@
 </head>
 <body>
 
-<header class="top">
+<header>
   <h1>Tinder</h1>
+  <button id="clear">Vymazat databázi</button>
 </header>
 
 <main>
-  <section id="swipe">
-    <div id="card"></div>
+  <div id="card"></div>
 
-    <div class="actions">
-      <button class="pass" onclick="vote(false)">❌</button>
-      <button class="like" onclick="vote(true)">❤️</button>
-    </div>
-  </section>
+  <div class="buttons">
+    <button id="dislike">❌</button>
+    <button id="like">❤️</button>
+  </div>
 
-  <section class="lists">
+  <section class="log">
+    <h2>Historie</h2>
     <div>
-      <h2>❤️ Likes</h2>
+      <strong>❤️ Like:</strong>
       <ul id="likes"></ul>
     </div>
     <div>
-      <h2>❌ Dislikes</h2>
+      <strong>❌ Dislike:</strong>
       <ul id="dislikes"></ul>
     </div>
   </section>
