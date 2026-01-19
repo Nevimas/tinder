@@ -5,9 +5,10 @@
 
 body {
   margin: 0;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  background: radial-gradient(circle at top, #1b1f3b, #05070f);
   color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 header {
@@ -17,54 +18,41 @@ header {
   align-items: center;
 }
 
-#clear {
-  background: black;
-  color: white;
-  border: none;
-  padding: 8px 16px;
+.top-buttons button {
+  margin-left: 10px;
+  padding: 8px 14px;
   border-radius: 20px;
+  border: none;
   cursor: pointer;
-}
-
-.layout {
-  display: grid;
-  grid-template-columns: 1fr 400px 1fr;
-  gap: 20px;
-  padding: 20px;
-  align-items: start;
 }
 
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 40px;
 }
 
 #card {
   width: 360px;
   height: 460px;
-  background: white;
-  color: black;
+  background: #0f1222;
   border-radius: 24px;
   padding: 25px;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+  text-align: center;
   transition: transform 0.3s ease, background 0.3s ease;
+  z-index: 2;
 }
 
-#card.like {
-  background: #d8ffe4;
-}
-
-#card.dislike {
-  background: #ffdede;
-}
+#card.like { background: #103c2b; }
+#card.dislike { background: #3b1212; }
 
 .avatar {
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  background: #ff416c;
-  color: white;
+  background: linear-gradient(135deg, #ff4ecd, #7b5cff);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,8 +62,9 @@ main {
 
 .buttons {
   display: flex;
-  gap: 50px;
+  gap: 60px;
   margin-top: 25px;
+  z-index: 3;
 }
 
 .buttons button {
@@ -85,34 +74,7 @@ main {
   border: none;
   font-size: 30px;
   cursor: pointer;
+  pointer-events: auto;
 }
 
-#like {
-  background: #2ecc71;
-}
-
-#dislike {
-  background: #e74c3c;
-}
-
-.history {
-  background: rgba(0,0,0,0.25);
-  border-radius: 20px;
-  padding: 20px;
-  min-height: 500px;
-}
-
-.history h2 {
-  text-align: center;
-  margin-top: 0;
-}
-
-.history ul {
-  list-style: none;
-  padding: 0;
-}
-
-.history li {
-  padding: 6px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-}
+#like { background: #2ec
