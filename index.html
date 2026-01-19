@@ -13,26 +13,28 @@
   <button id="clear">Vymazat databázi</button>
 </header>
 
-<main>
-  <div id="card"></div>
+<div class="layout">
 
-  <div class="buttons">
-    <button id="dislike">❌</button>
-    <button id="like">❤️</button>
-  </div>
+  <aside class="history like-box">
+    <h2>❤️ Like</h2>
+    <ul id="likes"></ul>
+  </aside>
 
-  <section class="log">
-    <h2>Historie</h2>
-    <div>
-      <strong>❤️ Like:</strong>
-      <ul id="likes"></ul>
+  <main>
+    <div id="card"></div>
+
+    <div class="buttons">
+      <button id="dislike">❌</button>
+      <button id="like">❤️</button>
     </div>
-    <div>
-      <strong>❌ Dislike:</strong>
-      <ul id="dislikes"></ul>
-    </div>
-  </section>
-</main>
+  </main>
+
+  <aside class="history dislike-box">
+    <h2>❌ Dislike</h2>
+    <ul id="dislikes"></ul>
+  </aside>
+
+</div>
 
 <script src="script.js"></script>
 </body>
