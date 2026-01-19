@@ -5,13 +5,13 @@
 
 body {
   margin: 0;
+  min-height: 100vh;
   background: linear-gradient(135deg, #ff416c, #ff4b2b);
   color: white;
-  min-height: 100vh;
 }
 
 header {
-  padding: 15px;
+  padding: 15px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,9 +21,17 @@ header {
   background: black;
   color: white;
   border: none;
-  padding: 8px 14px;
+  padding: 8px 16px;
   border-radius: 20px;
   cursor: pointer;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 400px 1fr;
+  gap: 20px;
+  padding: 20px;
+  align-items: start;
 }
 
 main {
@@ -33,51 +41,49 @@ main {
 }
 
 #card {
-  width: 300px;
-  height: 420px;
+  width: 360px;
+  height: 460px;
   background: white;
   color: black;
-  border-radius: 20px;
-  padding: 20px;
-  margin-top: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-  position: relative;
+  border-radius: 24px;
+  padding: 25px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.35);
   transition: transform 0.3s ease, background 0.3s ease;
 }
 
 #card.like {
-  background: #d4ffdf;
+  background: #d8ffe4;
 }
 
 #card.dislike {
-  background: #ffd6d6;
+  background: #ffdede;
 }
 
 .avatar {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   background: #ff416c;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
-  margin: 0 auto 10px;
+  font-size: 36px;
+  margin: 0 auto 15px;
 }
 
 .buttons {
   display: flex;
-  gap: 40px;
-  margin: 20px;
+  gap: 50px;
+  margin-top: 25px;
 }
 
 .buttons button {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   border: none;
-  font-size: 26px;
+  font-size: 30px;
   cursor: pointer;
 }
 
@@ -89,14 +95,24 @@ main {
   background: #e74c3c;
 }
 
-.log {
-  width: 90%;
-  max-width: 400px;
-  background: rgba(0,0,0,0.2);
-  border-radius: 15px;
-  padding: 15px;
+.history {
+  background: rgba(0,0,0,0.25);
+  border-radius: 20px;
+  padding: 20px;
+  min-height: 500px;
 }
 
-ul {
-  padding-left: 20px;
+.history h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.history ul {
+  list-style: none;
+  padding: 0;
+}
+
+.history li {
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
