@@ -29,8 +29,8 @@ header button {
   cursor: pointer;
 }
 
-/* CENTRÁLNÍ BLOK */
-#card-wrapper {
+/* MAIN */
+main {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -38,16 +38,15 @@ header button {
   text-align: center;
 }
 
-/* KARTA */
+/* CARD */
 #card {
   width: 380px;
   height: 560px;
   background: #0f1222;
   border-radius: 28px;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
   overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
   cursor: grab;
-  transition: transform 0.3s ease;
 }
 
 #card img {
@@ -66,23 +65,22 @@ header button {
 }
 
 .card-content p {
-  font-size: 19px;
+  margin-top: 14px;
+  font-size: 18px;
   line-height: 1.6;
-  margin-top: 16px;
-  opacity: 0.95;
 }
 
-/* TLAČÍTKA */
-.buttons {
+/* BUTTONS */
+.actions {
   margin-top: 25px;
   display: flex;
   justify-content: center;
   gap: 40px;
 }
 
-.buttons button {
-  width: 72px;
-  height: 72px;
+.actions button {
+  width: 70px;
+  height: 70px;
   font-size: 28px;
   border-radius: 50%;
   border: none;
@@ -92,7 +90,7 @@ header button {
 #like { background: #2ecc71; }
 #dislike { background: #e74c3c; }
 
-/* HISTORIE – FIXNĚ VPRAVO */
+/* HISTORY */
 #history {
   position: fixed;
   right: 20px;
